@@ -1,4 +1,3 @@
-// Use it as the 'x-api-key' header when making any request to the API, or by adding as a query string parameter e.g. 'api_key=live_pPYL3lbDv4V92PWnDcUOAawHdYN8hJcWbamLuSa7ZYEnf93LmNNbfNbn3DiS4FP1'
 import { fetchBreeds, fetchCatByBreed } from './cat-api';
 import axios from 'axios';
 import { Report } from 'notiflix/build/notiflix-report-aio';
