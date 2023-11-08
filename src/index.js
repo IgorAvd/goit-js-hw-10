@@ -46,40 +46,31 @@ function handleSelectChange() {
 
   fetchCatByBreed(selectedValue)
     .then(response => {
-      if (response.data.length === 0) {
-        errorEl.style.display = 'flex';
+      if (response.data.length === 0) {        
         Report.failure(
           '',
           'Oops! Something went wrong! Try reloading the page!'
-        );
-      } else {
-        errorEl.style.display = 'none';
-      }
+        ); 
       loaderEl.hidden = true;
       divEl.style.display = 'flex';
       divEl.innerHTML = createCatMarkup(response.data);
     })
     .catch(error => {
-      loaderEl.hidden = true;
-      // errorEl.style.display = 'flex';
+      loaderEl.hidden = true;     
       Report.failure('', 'Oops! Something went wrong! Try reloading the page!');
     });
 }
 
 fetchBreeds()
   .then(response => {
-    if (response.data.length === 0) {
-      // errorEl.style.display = 'flex';
+    if (response.data.length === 0) {     
       Report.failure('', 'Oops! Something went wrong! Try reloading the page!');
-    } else {
-      // errorEl.style.display = 'none';
-    }
+    } 
     loaderEl.hidden = true;
     selectEl.style.display = 'flex';
     selectEl.innerHTML = createMarkup(response.data);
   })
   .catch(error => {
-    loaderEl.hidden = true;
-    // errorEl.style.display = 'flex';
+    loaderEl.hidden = true;    
     Report.failure('', 'Oops! Something went wrong! Try reloading the page!');
   });
